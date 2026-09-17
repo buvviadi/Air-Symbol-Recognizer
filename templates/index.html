@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GestureLab</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div class="brand-mark">⌘</div>
+      <div class="brand-copy"><strong>GestureLab</strong><span>Interactive Vision Workspace</span></div>
+      <nav><a class="active" href="#workspace">Workspace</a><a href="#method">Method</a><a href="#components">Components</a></nav>
+      <div class="top-actions"><span class="live-pill"><i></i> CAMERA LIVE</span><button id="export-button">⇩ Export Session</button></div>
+    </header>
+
+    <section class="workspace" id="workspace">
+      <div class="workspace-main panel">
+        <div class="section-heading"><div><span class="eyebrow">GESTURE CANVAS</span><h1>Draw in the active surface</h1></div><button id="clear-button" class="secondary">↶ Clear</button></div>
+        <div class="drawing-stage" id="drawing-stage"><canvas id="trace-canvas" width="1000" height="620"></canvas><canvas id="object-canvas"></canvas><div class="stage-grid" aria-hidden="true"></div><div class="stage-scanline" aria-hidden="true"></div><div id="stage-empty" class="stage-empty"><div class="orbit"><span>✦</span></div><p>Your gesture path will appear here</p></div><div class="object-label"><span class="status-dot"></span><span id="object-name">3D OBJECT / READY</span></div><div class="stage-status"><span class="status-dot"></span><span id="mode-label">DRAW MODE</span><span class="divider"></span><span>INDEX FINGERTIP TRACKING</span></div></div>
+      </div>
+
+      <aside class="sidebar">
+        <section class="panel prediction-panel"><div class="panel-heading"><span class="eyebrow">MODEL PREDICTION</span><span class="online"><i></i> VISION CORE / ONLINE</span></div><div class="prediction-card"><div><strong id="prediction">Awaiting gesture</strong><span id="confidence">Draw a symbol, then classify</span></div><b class="prediction-dot"></b></div><button id="classify-button" class="primary">Classify gesture <span>↗</span></button></section>
+        <section class="panel camera-panel"><div class="panel-heading"><h2>Live camera</h2><span id="fps">24 FPS</span></div><div class="camera-frame"><img src="/video_feed" alt="Live camera feed"><div class="camera-empty"><span class="camera-ring"></span><small>Waiting for camera input</small></div></div><p class="hint">Hand landmarks are tracked in real time.</p></section>
+      </aside>
+    </section>
+
+    <section class="bottom-grid"><section class="panel description-panel"><span class="eyebrow">IDENTIFICATION</span><h2 id="description">Draw a symbol to see its description.</h2><div class="line-accent"></div><span class="micro">CLASSIFIER / SYMBOL CNN</span></section><section class="panel process-panel"><span class="eyebrow">WORKFLOW</span><div class="steps"><span class="step active"><b>01</b> Draw</span><span class="step"><b>02</b> Classify</span><span class="step"><b>03</b> Rotate</span></div><p>Move your hand left or right after classification to rotate the 3D representation.</p></section></section>
+    <footer><span>AIR / DRAW 01</span><span>REAL-TIME SYMBOL RECOGNITION</span><span>LOCAL VISION ENGINE</span></footer>
+  </main>
+  <script type="module" src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
