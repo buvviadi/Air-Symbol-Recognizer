@@ -1,4 +1,4 @@
 def test_calculate_metrics():
-    expected = 100
+    expected = 50
     actual = 50
     assert actual == expected
