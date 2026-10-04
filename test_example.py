@@ -1,3 +1,5 @@
+from metrics import calculate_metrics
+
 def test_calculate_metrics():
     # Assuming calculate_metrics is a function that calculates some metrics
     # and returns them as a dictionary.
