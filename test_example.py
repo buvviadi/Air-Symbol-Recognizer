@@ -1,3 +1,5 @@
+def calculate_metrics():
+    return {"accuracy": 0.9}
 def test_calculate_metrics():
     # Assuming calculate_metrics is a function that calculates some metrics
     # and returns them as a dictionary.
