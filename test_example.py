@@ -1,6 +1,7 @@
 def test_calculate_metrics():
     # Assuming calculate_metrics is a function that calculates some metrics
     # and returns them as a dictionary.
+    from some_module import calculate_metrics  # Add this line to import the function
     metrics = calculate_metrics()
     
     # Example assertion to check if the 'accuracy' key exists and is greater than 0.5
