@@ -1,10 +1,6 @@
 def calculate_metrics():
-    # Assuming calculate_metrics is a function that calculates some metrics
-    # and returns them as a dictionary.
-    metrics = {
-        'accuracy': 0.95
-    }
-    return metrics
+    # Mock implementation of calculate_metrics function
+    return {'accuracy': 0.7}
 
 def test_calculate_metrics():
     # Assuming calculate_metrics is a function that calculates some metrics
